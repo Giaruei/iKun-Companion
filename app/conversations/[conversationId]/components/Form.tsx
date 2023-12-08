@@ -57,7 +57,6 @@ const Form = () => {
 					register={register}
 					errors={errors}
 					required
-					placeholder="点击开喷"
 				/>
 				<button
 					type="submit"
