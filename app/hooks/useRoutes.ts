@@ -7,7 +7,7 @@
  * @Description:
  */
 import { useMemo } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { HiChat } from "react-icons/hi";
 import { HiArrowLeftOnRectangle, HiUsers } from "react-icons/hi2";
 import { signOut } from "next-auth/react";
@@ -15,6 +15,7 @@ import useConversation from "./useConversation";
 
 const useRoutes = () => {
 	const pathname = usePathname();
+	const router = useRouter();
 	const { conversationId } = useConversation();
 
 	const routes = useMemo(
@@ -33,12 +34,15 @@ const useRoutes = () => {
 			},
 			{
 				label: "Logout",
-				href: "#",
-				onClick: () => signOut(),
+				href: "/",
+				onClick: () => {
+					signOut();
+					router.push("/");
+				},
 				icon: HiArrowLeftOnRectangle,
 			},
 		],
-		[pathname, conversationId]
+		[pathname, conversationId, router]
 	);
 
 	return routes;
