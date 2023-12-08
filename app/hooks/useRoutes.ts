@@ -34,15 +34,12 @@ const useRoutes = () => {
 			},
 			{
 				label: "Logout",
-				href: "/",
-				onClick: () => {
-					signOut();
-					router.push("/");
-				},
+				href: "#",
+				onClick: () => signOut(),
 				icon: HiArrowLeftOnRectangle,
 			},
 		],
-		[pathname, conversationId, router]
+		[pathname, conversationId]
 	);
 
 	return routes;
