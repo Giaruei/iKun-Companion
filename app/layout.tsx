@@ -6,8 +6,6 @@
  * @FilePath: \messenger-clone\app\layout.tsx
  * @Description:
  */
-import "./globals.css";
-import { Inter } from "next/font/google";
 import ActiveStatus from "./components/ActiveStatus";
 import AuthContext from "./context/AuthContext";
 import ToasterContext from "./context/ToasterContext";
